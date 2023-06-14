@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank-app</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- NAV BAR -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Bank-app</a>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <button class="btn btn-primary me-2">Accounts</button>
+              </li>
+              <li class="nav-item">
+                <button class="btn btn-addAcc me-2">Add Accounts</button>
+              </li>
+              <li class="nav-item">
+                <button class="btn btn-EditDeleteAcc me-2">Edit/Delete Accounts</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <!-- ACCOUNT VIEW SECTION -->
+    <section class="accountView">
+        <div class="row">
+            <div class="col-8 offset-2">
+                <h1 class="text-center py-5">Accounts</h1>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Full name</th>
+                        <th scope="col">Deposit</th>
+                        <th scope="col">Card</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>ID</td>
+                        <td>Full name</td>
+                        <td>Deposit</td>
+                        <td>Card</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+
+        </div>
+
+    </section>
+    
+    <script src="db.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+let accountsView = document.querySelector(".accountView")
