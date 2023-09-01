@@ -16,5 +16,4 @@ function createAccountTable(){
         `.trim()
     });
 accountsTable.innerHTML = html;
-
 }
