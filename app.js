@@ -1,5 +1,12 @@
+/* VIEW */
 let accountsView = document.querySelector(".accountView");
+/* TABLE */
 let accountsTable = accountsView.querySelector("tbody");
+/* BUTTONS */
+let accountsBtn = document.querySelector('#accounts');
+let addAccountBtn = document.querySelector('#addAccount');
+let editDeleteAccountBtn = document.querySelector('#editDeleteAccount');
+
 
 createAccountTable();
 
