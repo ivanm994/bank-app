@@ -104,10 +104,22 @@ function createEditDeleteTable(){
                 <td>${account.card}</td>
                 <td>
                     <button class="btn btn-sm btn-warning">Edit</button>
-                    <button class="btn btn-sm btn-danger">Delete</button>
+                    <button class="btn btn-sm btn-danger delete">Delete</button>
                 </td>
             </tr>
         `.trim()
     });
     editDeleteTable.innerHTML = html;
+    addActionsListeneres();
+}
+
+function addActionsListeneres(){
+    let deleteBtn = editDeleteTable.querySelectorAll(".delete");
+    deleteBtn.forEach((btn)=>{
+        btn.addEventListener('click', deleteAccount);
+    })
+}
+
+function deleteAccount(){
+    console.log("delete");
 }
