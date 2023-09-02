@@ -123,4 +123,7 @@ function addActionsListeneres(){
 function deleteAccount(){
     let id = this.getAttribute("data-id");
     console.log(id);
+    db = db.filter((account) => account.id !== id);
+    createAccountTable();
+    changeView(accountsView);
 }
