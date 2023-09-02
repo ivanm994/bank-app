@@ -6,7 +6,6 @@ let addAccountView = document.querySelector(".addAccountView");
 let accountsTable = accountsView.querySelector("tbody");
 
 /* INPUTS */ 
-
 let inputId = addAccountView.querySelector("input[name='id']");
 let inputFullName = addAccountView.querySelector("input[name='fullName']");
 let inputDeposit = addAccountView.querySelector("input[name='deposit']");
@@ -21,7 +20,7 @@ let saveAccountBtn = document.querySelector('#saveAccount');
 /* LISTENERS */
 accountsBtn.addEventListener('click', displayAccountView)
 addAccountBtn.addEventListener('click', displayAddAccountView)
-// editDeleteAccountBtn.addEventListener('click', displayEditDeleteAccountView)
+editDeleteAccountBtn.addEventListener('click', displayEditDeleteAccountView)
 saveAccountBtn.addEventListener('click', saveAccount)
 
 createAccountTable();
@@ -36,15 +35,21 @@ function displayAddAccountView(){
     addAccountView.style.display = "block";
 }
 
+function displayEditDeleteAccountView(){
+
+}
+
 function saveAccount(){
 
     let account = {
-        id : inputId.value,
+        id : new Date().getTime(),
         fullName : inputFullName.value,
         deposit : inputDeposit.value,
         card : inputCard.value
     }
-    console.log(account);
+    db.push(account)
+    displayAccountView();
+    createAccountTable();
 }
 
 function createAccountTable(){
