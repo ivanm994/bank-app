@@ -104,7 +104,7 @@ function createEditDeleteTable(){
                 <td>${account.card}</td>
                 <td>
                     <button class="btn btn-sm btn-warning">Edit</button>
-                    <button class="btn btn-sm btn-danger delete">Delete</button>
+                    <button class="btn btn-sm btn-danger delete " data-id="${account.id}">Delete</button>
                 </td>
             </tr>
         `.trim()
@@ -121,5 +121,6 @@ function addActionsListeneres(){
 }
 
 function deleteAccount(){
-    console.log("delete");
+    let id = this.getAttribute("data-id");
+    console.log(id);
 }
