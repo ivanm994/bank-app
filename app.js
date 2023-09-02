@@ -6,6 +6,7 @@ let editDeleteView = document.querySelector(".editDeleteView")
 
 /* TABLE */
 let accountsTable = accountsView.querySelector("tbody");
+let editDeleteTable = editDeleteView.querySelector("tbody")
 
 /* INPUTS */ 
 let inputId = addAccountView.querySelector("input[name='id']");
@@ -53,8 +54,10 @@ function displayEditDeleteAccountView(){
     // addAccountView.style.display = "none";
     // accountsView.style.display = "none";
     changeView(editDeleteView);
-    
+    createEditDeleteTable()   
 }
+
+
 
 function saveAccount(){
 
@@ -88,4 +91,23 @@ function createAccountTable(){
         `.trim()
     });
 accountsTable.innerHTML = html;
+}
+
+function createEditDeleteTable(){
+    let html = ""
+    db.forEach((account) => {
+        html += `
+            <tr>
+                <td>${account.id}</td>
+                <td>${account.fullName}</td>
+                <td>${account.deposit}</td>
+                <td>${account.card}</td>
+                <td>
+                    <button class="btn btn-sm btn-warning">Edit</button>
+                    <button class="btn btn-sm btn-danger">Delete</button>
+                </td>
+            </tr>
+        `.trim()
+    });
+    editDeleteTable.innerHTML = html;
 }
