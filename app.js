@@ -1,6 +1,7 @@
 /* VIEW */
 let accountsView = document.querySelector(".accountView");
 let addAccountView = document.querySelector(".addAccountView");
+let editDeleteView = document.querySelector(".editDeleteView")
 
 /* TABLE */
 let accountsTable = accountsView.querySelector("tbody");
@@ -27,16 +28,21 @@ createAccountTable();
 
 function displayAccountView(){
     addAccountView.style.display = "none";
-    accountsView.style.display = "block";    
+    accountsView.style.display = "block";
+    editDeleteView.style.display = "none";    
 }
 
 function displayAddAccountView(){
     accountsView.style.display = "none";
     addAccountView.style.display = "block";
+    editDeleteView.style.display = "none";
 }
 
 function displayEditDeleteAccountView(){
-
+    editDeleteView.style.display = "block";
+    addAccountView.style.display = "none";
+    accountsView.style.display = "none";
+    
 }
 
 function saveAccount(){
