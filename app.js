@@ -8,9 +8,16 @@ let accountsBtn = document.querySelector('#accounts');
 let addAccountBtn = document.querySelector('#addAccount');
 let editDeleteAccountBtn = document.querySelector('#editDeleteAccount');
 
+accountsBtn.addEventListener('click', displayAccountView)
 addAccountBtn.addEventListener('click', displayAddAccountView)
+editDeleteAccountBtn.addEventListener('click', displayEditDeleteAccountView)
 
 createAccountTable();
+
+function displayAccountView(){
+    addAccountView.style.display = "none";
+    accountsView.style.display = "block";    
+}
 
 function displayAddAccountView(){
     accountsView.style.display = "none";
