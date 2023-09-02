@@ -48,8 +48,14 @@ function saveAccount(){
         card : inputCard.value
     }
     db.push(account)
+
     displayAccountView();
     createAccountTable();
+    inputId.value = "";
+    inputFullName.value = "";
+    inputDeposit.value = "";
+    inputCard.value = "";
+
 }
 
 function createAccountTable(){
