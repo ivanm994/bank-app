@@ -1,4 +1,5 @@
 /* VIEW */
+let allViews = document.querySelectorAll(".view");
 let accountsView = document.querySelector(".accountView");
 let addAccountView = document.querySelector(".addAccountView");
 let editDeleteView = document.querySelector(".editDeleteView")
@@ -26,22 +27,32 @@ saveAccountBtn.addEventListener('click', saveAccount)
 
 createAccountTable();
 
+function changeView(view){
+    allViews.forEach((currentView)=>{
+        currentView.style.display = "none";
+    })
+    view.style.display = "block";
+}
+
 function displayAccountView(){
-    addAccountView.style.display = "none";
-    accountsView.style.display = "block";
-    editDeleteView.style.display = "none";    
+    // addAccountView.style.display = "none";
+    // accountsView.style.display = "block";
+    // editDeleteView.style.display = "none";    
+    changeView(accountsView);
 }
 
 function displayAddAccountView(){
-    accountsView.style.display = "none";
-    addAccountView.style.display = "block";
-    editDeleteView.style.display = "none";
+    // accountsView.style.display = "none";
+    // addAccountView.style.display = "block";
+    // editDeleteView.style.display = "none";
+    changeView(addAccountView);
 }
 
 function displayEditDeleteAccountView(){
-    editDeleteView.style.display = "block";
-    addAccountView.style.display = "none";
-    accountsView.style.display = "none";
+    // editDeleteView.style.display = "block";
+    // addAccountView.style.display = "none";
+    // accountsView.style.display = "none";
+    changeView(editDeleteView);
     
 }
 
