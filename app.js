@@ -49,8 +49,9 @@ function displayAccountView(){
     // addAccountView.style.display = "none";
     // accountsView.style.display = "block";
     // editDeleteView.style.display = "none";    
-    createAccountTable();
+    // createAccountTable();
     changeView(accountsView);
+    createAccountTable();
 }
 
 function displayAddAccountView(){
@@ -66,6 +67,10 @@ function displayEditDeleteAccountView(){
     // accountsView.style.display = "none";
     changeView(editDeleteView);
     createEditDeleteTable()   
+}
+
+function displayEditView(){
+    changeView(editAccountView);
 }
 
 
@@ -113,8 +118,8 @@ function createEditDeleteTable(){
                 <td>${account.deposit}</td>
                 <td>${account.card}</td>
                 <td>
-                    <button class="btn btn-sm btn-warning">Edit</button>
-                    <button class="btn btn-sm btn-danger delete " data-id="${account.id}">Delete</button>
+                    <button class="btn btn-sm btn-warning edit-account" data-id="${account.id}">Edit</button>
+                    <button class="btn btn-sm btn-danger delete-account" data-id="${account.id}">Delete</button>
                 </td>
             </tr>
         `.trim()
@@ -124,9 +129,15 @@ function createEditDeleteTable(){
 }
 
 function addActionsListeneres(){
-    let deleteBtn = editDeleteTable.querySelectorAll(".delete");
-    deleteBtn.forEach((btn)=>{
+    let deleteBtns = editDeleteTable.querySelectorAll(".delete-account");
+    let editBtns = editDeleteTable.querySelectorAll(".edit-account");
+
+    deleteBtns.forEach((btn)=>{
         btn.addEventListener('click', deleteAccount);
+    })
+
+    editBtns.forEach((btn)=>{
+        btn.addEventListener('click', displayEditView);
     })
 }
 
@@ -139,5 +150,5 @@ function deleteAccount(){
 }
 
 function updateAccount(){
-
+    
 }
