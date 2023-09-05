@@ -2,7 +2,8 @@
 let allViews = document.querySelectorAll(".view");
 let accountsView = document.querySelector(".accountView");
 let addAccountView = document.querySelector(".addAccountView");
-let editDeleteView = document.querySelector(".editDeleteView")
+let editDeleteView = document.querySelector(".editDeleteView");
+let editAccountView = document.querySelector(".editAccountView");
 
 /* TABLE */
 let accountsTable = accountsView.querySelector("tbody");
@@ -14,11 +15,17 @@ let inputFullName = addAccountView.querySelector("input[name='fullName']");
 let inputDeposit = addAccountView.querySelector("input[name='deposit']");
 let inputCard = addAccountView.querySelector("input[name='card']");
 
+let editInputId = editAccountViewAccountView.querySelector("input[name='id']");
+let editInputFullName = editAccountView.querySelector("input[name='fullName']");
+let editInputDeposit = editAccountView.querySelector("input[name='deposit']");
+let editInputCard = editAccountView.querySelector("input[name='card']");
+
 /* BUTTONS */           
 let accountsBtn = document.querySelector('#accounts');
 let addAccountBtn = document.querySelector('#addAccount');
 let editDeleteAccountBtn = document.querySelector('#editDeleteAccount');
 let saveAccountBtn = document.querySelector('#saveAccount');
+let updateAccountBtn = document.querySelector('#updateAccount');
 
 /* LISTENERS */
 accountsBtn.addEventListener('click', displayAccountView)
@@ -26,8 +33,10 @@ addAccountBtn.addEventListener('click', displayAddAccountView)
 editDeleteAccountBtn.addEventListener('click', displayEditDeleteAccountView)
 saveAccountBtn.addEventListener('click', saveAccount)
 
+
 createAccountTable();
 
+/* CHANGE ACCOUNT VIEW */
 function changeView(view){
     allViews.forEach((currentView)=>{
         currentView.style.display = "none";
