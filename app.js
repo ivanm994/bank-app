@@ -70,6 +70,8 @@ function displayEditDeleteAccountView(){
 }
 
 function displayEditView(){
+    let id = this.getAttribute("data-id");
+    alert(id);
     changeView(editAccountView);
 }
 
